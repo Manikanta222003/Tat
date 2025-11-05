@@ -5,7 +5,7 @@ import css from "../assets/images/CSS-grey.png";
 import javascript from "../assets/images/JS-grey.png";
 import vscode from "../assets/images/visual studio-grey.png";
 import java from "../assets/images/java-grey.png";
-import figma from "../assets/images/Figma-grey.png";
+import figma from "../assets/images/FIGMA-grey.png";
 import python from "../assets/images/python-grey.png";
 import angular from "../assets/images/angular-grey.png";
 import react from "../assets/images/react-grey.png";
