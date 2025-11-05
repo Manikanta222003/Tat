@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: "Inter", sans-serif;
   background: linear-gradient(135deg, #dfe9f3 0%, #ffffff 100%);
@@ -6,7 +6,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
+} */
 
 /* CHAT WRAPPER */
 .chat-app {
