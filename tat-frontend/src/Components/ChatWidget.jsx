@@ -77,14 +77,14 @@ export default function ChatWidget() {
       {open && !minimized && (
         <div className="chat-popup" ref={popupRef}>
           {/* Popup Header */}
-          <div className="chat-popup-header" onMouseDown={startDrag}>
+          {/* <div className="chat-popup-header" onMouseDown={startDrag}>
             <div className="chat-header-left">
               {/* <img className="avatar" src="/bot.png" alt="" /> */}
               <div>
                 <div className="name">TAT ChatBot</div>
                 
-              </div>
-            </div>
+              </div> */}
+            {/* </div> */}
 
             <div className="chat-header-right">
               <button className="minimize-btn" onClick={() => setMinimized(true)}>
