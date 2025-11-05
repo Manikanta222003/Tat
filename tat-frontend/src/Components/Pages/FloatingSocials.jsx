@@ -86,9 +86,6 @@ const FloatingSocials = () => {
     color: 'rgb(30, 60, 114)',
     textDecoration: 'none',
     transition:'transform 0.2s',
-
-    padding: 0,
-    border: 'none',
           }}
           title="Chat"
           onClick={openChatWidget}
