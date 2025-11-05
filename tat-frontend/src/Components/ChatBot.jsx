@@ -8,6 +8,14 @@ function ChatBot() {
   const [loading, setLoading] = useState(false);
   const BACKEND_URL = "https://tat-h26n.onrender.com";
 
+  // ✅ Convert URLs to clickable links
+  const convertLinks = (text) => {
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.replace(urlRegex, (url) => {
+      return `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+    });
+  };
+
   const handleAsk = async () => {
     if (!question.trim()) return;
 
@@ -21,8 +29,7 @@ function ChatBot() {
         question: userQuestion,
       });
 
-      const botAnswer =
-        response.data.answer || "Sorry, I don't know the answer.";
+      const botAnswer = response.data.answer || "Sorry, I don't know the answer.";
 
       setTimeout(() => {
         setChatHistory((prev) => [
@@ -42,13 +49,12 @@ function ChatBot() {
 
   return (
     <div className="chat-app">
-
       <div className="chat-container">
         {chatHistory.map((chat, idx) => (
           <div
             key={idx}
             className={`bubble ${chat.type}`}
-            dangerouslySetInnerHTML={{ __html: chat.text }} // ✅ MAKE LINKS CLICKABLE
+            dangerouslySetInnerHTML={{ __html: convertLinks(chat.text) }}
           ></div>
         ))}
 
