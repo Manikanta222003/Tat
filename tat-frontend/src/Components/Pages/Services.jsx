@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import WD from "../assets/images/Web.png";
+import WD from "../assets/images/web.png";
 import UIUX from "../assets/images/uiux.png";
 import DM from "../assets/images/DigitalMarketing.png";
 import GD from "../assets/images/GamingDevelopment.png";
