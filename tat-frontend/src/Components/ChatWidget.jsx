@@ -74,8 +74,8 @@ export default function ChatWidget() {
       )}
 
       {/* Full Popup Window */}
-      {open && !minimized && (
-        <div className="chat-popup" ref={popupRef}>
+      /* {open && !minimized && (
+        <div className="chat-popup" ref={popupRef}> */
           {/* Popup Header */}
           {/* <div className="chat-popup-header" onMouseDown={startDrag}>
             <div className="chat-header-left">
@@ -86,7 +86,7 @@ export default function ChatWidget() {
               </div> */}
             {/* </div> */}
 
-            <div className="chat-header-right">
+            {/* <div className="chat-header-right">
               <button className="minimize-btn" onClick={() => setMinimized(true)}>
                 ─
               </button>
@@ -94,7 +94,7 @@ export default function ChatWidget() {
                 ×
               </button>
             </div>
-          </div>
+          </div> */}
 
           <div className="chat-popup-body">
             <ChatBot />
