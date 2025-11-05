@@ -17,7 +17,7 @@ function ChatBot() {
     setLoading(true);
 
     try {
-        const response = await axios.post(`${BACKEND_URL}/chat`, {
+      const response = await axios.post(`${BACKEND_URL}/chat`, {
         question: userQuestion,
       });
 
@@ -42,13 +42,14 @@ function ChatBot() {
 
   return (
     <div className="chat-app">
-      {/* <div className="chat-header">Chatbot</div> */}
 
       <div className="chat-container">
         {chatHistory.map((chat, idx) => (
-          <div key={idx} className={`bubble ${chat.type}`}>
-            {chat.text}
-          </div>
+          <div
+            key={idx}
+            className={`bubble ${chat.type}`}
+            dangerouslySetInnerHTML={{ __html: chat.text }} // ✅ MAKE LINKS CLICKABLE
+          ></div>
         ))}
 
         {loading && (
