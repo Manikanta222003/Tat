@@ -1,144 +1,141 @@
-/* body {
+body {
   margin: 0;
-  font-family: "Inter", sans-serif;
-  background: linear-gradient(135deg, #dfe9f3 0%, #ffffff 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-} */
+  font-family: 'Segoe UI', sans-serif;
+  background: #eceff1;
+}
 
-/* CHAT WRAPPER */
+/* Main Chat App */
 .chat-app {
   width: 100%;
-  max-width: 480px;
-  height: 75vh;
+  max-width: 500px;
+  height: 62vh;
+  margin: 10px auto;
   display: flex;
   flex-direction: column;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  overflow: hidden;
+  background: #ffffff;
+  border-radius: 20px;
 }
 
-/* HEADER */
+/* Header */
 .chat-header {
-  background: linear-gradient(135deg, #0ABF90, #018C72);
+  padding: 15px;
+  background: #128C7E;
   color: white;
-  padding: 16px;
+  font-size: 20px;
   text-align: center;
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  font-weight: bold;
 }
 
-/* MESSAGES AREA */
+/* Message Container */
 .chat-container {
   flex: 1;
-  padding: 18px;
+  padding: 15px;
   overflow-y: auto;
+  background: #ECE5DD;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  scroll-behavior: smooth;
-  background: #F4F7F8;
 }
 
-/* CHAT BUBBLES */
+/* WhatsApp-like Bubbles */
 .bubble {
-  max-width: 75%;
-  padding: 12px 15px;
-  border-radius: 16px;
+  max-width: 70%;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  border-radius: 18px;
   font-size: 15px;
-  line-height: 1.45;
+  animation: fadeIn 0.3s ease-in-out;
+
+  /* ✅ Fix link overflow */
   white-space: normal;
   overflow-wrap: anywhere;
-  animation: fadeIn 0.3s ease-in-out;
 }
 
-/* USER BUBBLE */
+/* ✅ Make hyperlinks clickable & same color */
+.bubble a {
+  color: inherit;              /* Same text color */
+  text-decoration: underline;  /* Show link clearly */
+  cursor: pointer;
+  font-weight: 500;
+  pointer-events: auto;
+}
+
+/* User Bubble */
 .user {
   align-self: flex-end;
-  background: #0ABF90;
-  color: white;
-  border-bottom-right-radius: 4px;
+  background: #DCF8C6;
+  border-bottom-right-radius: 0;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
 }
 
-/* BOT BUBBLE */
+/* Bot Bubble */
 .bot {
   align-self: flex-start;
-  background: white;
-  border-bottom-left-radius: 4px;
-  border: 1px solid #e5e5e5;
-  color: #333;
+  background: #ffffff;
+  border-bottom-left-radius: 0;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
 }
 
-/* CLICKABLE LINKS SAME COLOR */
-.bubble a {
-  color: inherit;
-  font-weight: 600;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-/* TYPING ANIMATION */
+/* Typing Animation */
 .typing {
   display: flex;
-  align-items: center;
-  gap: 5px;
+  background: #fff;
+  width: auto;
 }
+
 .typing span {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
+  margin: 0 3px;
   background: #999;
   border-radius: 50%;
   animation: blink 1.4s infinite both;
 }
-.typing span:nth-child(2) { animation-delay: 0.2s; }
-.typing span:nth-child(3) { animation-delay: 0.4s; }
 
-/* INPUT AREA */
+.typing span:nth-child(2) { animation-delay: 0.2s; }
+typing span:nth-child(3) { animation-delay: 0.4s; }
+
+/* Input Area */
 .input-area {
   padding: 12px;
-  background: #fff;
   display: flex;
-  gap: 10px;
+  background: #fff;
   border-top: 1px solid #ddd;
 }
 
 input {
   flex: 1;
   padding: 12px;
-  border-radius: 12px;
-  border: 1px solid #ccc;
+  border-radius: 30px;
+  border: 1px solid #bbb;
   outline: none;
   font-size: 15px;
 }
 
-/* SEND BUTTON — MODERN GRADIENT */
 button {
-  padding: 12px 22px;
+  margin-left: 10px;
+  padding: 12px 20px;
   border: none;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #0ABF90, #018C72);
+  background: #128C7E;
   color: white;
-  font-weight: 600;
+  border-radius: 30px;
   cursor: pointer;
-  transition: 0.2s ease;
+  font-size: 16px;
+  transition: 0.2s ease-in-out;
 }
 
 button:hover {
+  background: #0d6f63;
   transform: scale(1.05);
 }
 
-/* ANIMATIONS */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+/* Animations */
 @keyframes blink {
   0%, 80%, 100% { opacity: 0; }
   40% { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
