@@ -49,6 +49,7 @@ function ChatBot() {
 
   return (
     <div className="chat-app">
+      <div className="chat-header">TrulyAim Assistant 🤖</div>
       <div className="chat-container">
         {chatHistory.map((chat, idx) => (
           <div
