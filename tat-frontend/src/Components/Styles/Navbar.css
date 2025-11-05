@@ -1,0 +1,433 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-color: transparent;
+  color: black;
+  width: 100%;
+  padding: 0px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease; /* Add smooth transition */
+}
+
+/* Scrolled state styles */
+.navbar.scrolled {
+  background-color: white;
+  /* border-bottom-style: inset; */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  backdrop-filter: saturate(120%) blur(6px);
+  -webkit-backdrop-filter: saturate(120%) blur(6px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease,
+              border-color 0.25s ease, backdrop-filter 0.25s ease;
+}
+
+/* Use this class when the section background matches the navbar color.
+   Add/remove it via JS based on scroll / intersection observer. */
+.navbar.same-bg {
+  /* slight tint + blur to separate navbar from matching background */
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px) saturate(115%);
+  -webkit-backdrop-filter: blur(6px) saturate(115%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  color: #111;
+}
+
+/* Dark variant when page/section behind navbar is dark but you still need separation */
+.navbar.same-bg.dark {
+  background-color: rgba(6, 18, 34, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+  color: #fff;
+}
+
+/* Ensure links and toggles adapt for contrast in same-bg states */
+.navbar.same-bg .nav-link,
+.navbar.same-bg .dropdown-toggle,
+.navbar.same-bg .dropdown-item,
+.navbar.same-bg .hamburger {
+  color: inherit !important;
+}
+
+/* Dark same-bg links */
+.navbar.same-bg.dark .nav-link,
+.navbar.same-bg.dark .dropdown-toggle,
+.navbar.same-bg.dark .dropdown-item,
+.navbar.same-bg.dark .hamburger {
+  color: inherit !important;
+}
+
+/* Mobile menu background when navbar sits on same-color section */
+.navbar.same-bg .nav-links.active {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Dark mobile menu case */
+.navbar.same-bg.dark .nav-links.active {
+  background-color: rgba(6, 18, 34, 0.92);
+}
+
+/* Optional thin outline alternative for minimal separation */
+.navbar.same-bg.outline {
+  background-color: transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: none;
+}
+
+.navbar.scrolled .nav-link,
+.navbar.scrolled .dropdown-toggle,
+.navbar.scrolled .dropdown-item {
+  color: black !important;
+}
+
+.navbar.scrolled .nav-link:hover,
+.navbar.scrolled .dropdown-toggle:hover,
+.navbar.scrolled .dropdown-item:hover {
+  color: #1e3a8a; /* Adjust hover color for scrolled state if needed */
+}
+
+.navbar.scrolled .hamburger {
+  color: black; /* Change hamburger icon color */
+}
+
+/* For mobile menu in scrolled state */
+.navbar.scrolled .nav-links.active {
+  background-color: white; /* Optional: change mobile menu background */
+}
+
+/* For dropdown menu in scrolled state */
+.navbar.scrolled .dropdown-menu {
+  background-color: white; /* Change dropdown background to match */
+}
+
+.navbar.scrolled .dropdown-menu .dropdown-item {
+  color: black;
+}
+
+.n-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 16px;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+}
+
+.navbar-logo img {
+  height: auto;
+  width: 50px;
+}
+
+.navbar-logo img.logo-text {
+  height: auto;
+  width: 150px;
+  margin-left: 10px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-link,
+.dropdown-toggle {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after,
+.dropdown-toggle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 3px;
+  background: #fff;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover,
+.dropdown-toggle:hover {
+  color: #8fc3f4;
+}
+
+.nav-link:hover::after,
+.dropdown-toggle:hover::after {
+  width: 100%;
+}
+
+.nav-link.active,
+.dropdown-toggle.active {
+  color: #007bff;
+}
+
+.nav-link[aria-current="page"],
+.nav-link[aria-current="true"],
+.dropdown-toggle[aria-current="page"],
+.dropdown-toggle[aria-current="true"] {
+  color: rgb(254, 254, 254) !important;
+}
+
+.nav-link:not(.active),
+.dropdown-toggle:not(.active) {
+  color: rgb(255, 255, 255);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-icon {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #2d3748;
+  list-style: none;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  position: relative;
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  transition: color 0.3s;
+}
+
+.dropdown-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: #8fc3f4;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-item:hover {
+  color: #8fc3f4;
+}
+
+.dropdown-item:hover::after {
+  width: 100%;
+}
+
+.dropdown-item.active {
+  color: #8fc3f4;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+@media screen and (min-width: 300px) and (max-width: 767px) {
+  .n-container {
+    padding: 10px 12px;
+  }
+
+  .navbar-logo {
+    font-size: 1.25rem;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    /* background-color: #4a5568; */
+    flex-direction: column;
+    padding: 1rem;
+    gap: 2.5rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-link,
+  .dropdown-toggle {
+    font-size: 1rem;
+  }
+
+  .dropdown-menu {
+    position: static;
+    background-color: #2d3748;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    box-shadow: none;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu.show {
+    display: block;
+  }
+
+  .dropdown-item {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .n-container {
+    padding: 10px 24px;
+  }
+
+  .navbar-logo {
+    font-size: 1.4rem;
+  }
+
+  .nav-links {
+    gap: 4rem;
+  }
+
+  .nav-link,
+  .dropdown-toggle {
+    font-size: 0.95rem;
+  }
+
+  .dropdown-menu {
+    min-width: 220px;
+  }
+
+  .dropdown-item {
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (min-width: 1023px) and (max-width: 1440px) {
+  .n-container {
+    padding: 10px 32px;
+  }
+
+  .navbar-logo {
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    gap: 5.5rem;
+  }
+
+  .nav-link,
+  .dropdown-toggle {
+    font-size: 1rem;
+  }
+
+  .dropdown-menu {
+    min-width: 250px;
+  }
+
+  .dropdown-item {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .n-container {
+    padding: 10px 48px;
+  }
+
+  .navbar-logo {
+    font-size: 1.75rem;
+  }
+
+  .nav-links {
+    gap: 5.5rem;
+  }
+
+  .nav-link,
+  .dropdown-toggle {
+    font-size: 1.1rem;
+  }
+
+  .dropdown-menu {
+    min-width: 280px;
+  }
+
+  .dropdown-item {
+    font-size: 1rem;
+  }
+}
+
+/* Page-specific: Gaming page navbar background + text */
+.navbar.gaming {
+  background-color: rgb(0 0 0); /* dark translucent - change to desired color */
+  color: #fff;
+  transition: background-color 0.25s ease;
+}
+
+.navbar.gaming .nav-link,
+.navbar.gaming .dropdown-toggle,
+.navbar.gaming .dropdown-item,
+.navbar.gaming .hamburger {
+  color: #fff !important;
+}
+
+/* Ensure mobile menu uses same gaming background when opened */
+.navbar.gaming .nav-links.active {
+  background-color: rgba(6, 18, 34, 0.85);
+}
+
+/* If you want a different look when scrolled on gaming page, override */
+.navbar.gaming.scrolled {
+  background-color: rgba(255,255,255,0.98); /* keeps existing scrolled behavior; change or remove if not wanted */
+}
+
+.navbar.gaming.scrolled .nav-link,
+.navbar.gaming.scrolled .dropdown-toggle,
+.navbar.gaming.scrolled .dropdown-item {
+  color: black !important;
+}

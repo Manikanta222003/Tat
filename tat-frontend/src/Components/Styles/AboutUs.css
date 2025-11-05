@@ -1,0 +1,300 @@
+body, .abouts-container { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+.abouts-us-title { font-family: 'Poppins', sans-serif; font-weight:600; font-size:28px; }
+
+
+.abouts-container {
+  position: relative; /* Needed for corner image positioning */
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* place this near top of AboutUs.css */
+.abouts-container { position: relative; padding: 60px 50px; box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.159); border-radius: 18px; margin-bottom: 20px }
+
+/* top-right floating logo */
+.corner-image-container {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(2,10,40,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  animation: floatY 6s ease-in-out infinite;
+  z-index: 6;
+}
+.corner-image { width: 100%; height: 100%; object-fit: contain; }
+
+@keyframes floatY {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+
+.stats-row { display:flex; gap:12px; margin-top:18px; z-index: 3; position: relative; }
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width:270px; 
+  padding:12px 16px; 
+  border-radius:12px;
+  background: rgba(255,255,255,0.6); 
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 18px rgba(10,20,40,0.06);
+  text-align: left;
+}
+.stat-value { font-size:xx-large; font-weight:700; color:#032c94; }
+.stat-label { font-size:16px; color:#41536c; }
+
+/* small badge on image */
+.image-badge {
+  position: absolute; left:16px; bottom:16px; padding:6px 10px; border-radius:999px;
+  background: rgba(3,40,148,0.9); color:#fff; font-weight:600; font-size:12px;
+  box-shadow: 0 6px 14px rgba(3,40,148,0.12);
+}
+
+
+
+.abouts-us-title {
+  text-align: left;
+  font-size: 48px;
+  font-weight: 700;
+  
+            background-image: linear-gradient(45deg, var(--primary-blue), var(--primary-purple));
+            background-size: 200% 200%;
+            animation: gradientShift 4s ease infinite;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+}
+
+ @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+/* Floating corner image */
+.corner-image-container {
+  /* position: absolute;
+  top: 55px;
+  right: 20px; */
+  width: 70px; /* Small size */
+  height: 70px;
+}
+
+.about-head{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.corner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Flex layout */
+.about-us-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+/* Left image + stats */
+.about-image-container {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+}
+
+.about-image {
+  width: 100%;
+  height: 450px;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+
+/* Right text */
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  font-size: 16px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* .about-text a {
+  text-decoration: none;
+  color: #034494;
+  transition: 0.3s;
+
+}
+
+.about-text a:hover {
+  text-decoration: underline;
+} */
+
+.see-more-link {
+  text-decoration: none;
+  color: #032c94;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  font: normal;
+  gap: 2px;
+  transition: color 0.3s ease;
+}
+
+.see-more-link i {
+  text-align: center;
+  font-size: 18px;
+  animation: arrowMove 1.5s ease-in-out infinite;
+}
+
+@keyframes arrowMove {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(8px);
+    opacity: 0.8;
+  }
+}
+
+.see-more-link:hover {
+  color: #2f80c6; /* hover color */
+}
+
+.see-more-link:hover i {
+  transform: translateX(6px); /* slide the arrow smoothly */
+}
+
+/* Large screens (default styles already good) */
+
+/* Tablet screens */
+@media (max-width: 1024px) {
+  .abouts-container {
+    padding: 40px 30px;
+  }
+
+  .abouts-us-title {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .about-us-row {
+    gap: 30px;
+  }
+
+  .about-image {
+    height: 380px;
+  }
+
+  .stat-card {
+    min-width: 220px;
+    padding: 10px 14px;
+  }
+
+  .stat-value {
+    font-size: 1.8rem;
+  }
+}
+
+/* Medium tablets & large phones */
+@media (max-width: 768px) {
+  .about-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .abouts-us-title {
+    font-size: 32px;
+    text-align: left;
+  }
+
+  .about-us-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .about-image {
+    height: 320px;
+  }
+
+  .about-text {
+    font-size: 15px;
+  }
+
+  .stats-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .stat-card {
+    min-width: 180px;
+    flex: 1 1 45%;
+    text-align: center;
+  }
+}
+
+/* Small phones */
+@media (max-width: 760px) {
+  .abouts-container {
+    padding: 25px 15px;
+  }
+
+  .abouts-us-title {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .corner-image-container {
+    width: 55px;
+    height: 55px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .about-image {
+    height: 240px;
+  }
+
+  .about-text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .stats-row {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .stat-card {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .stat-value {
+    font-size: 35px;
+  }
+
+  .stat-label {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,864 @@
+:root {
+  --page-bg: #ffffff;
+  --container-max: 1100px;
+  --gap: 1.5rem;
+  --accent-gradient: linear-gradient(90deg, #ff7e5f, #ffb86b, #ffd56b);
+  --text-color: #222;
+  --muted: #666;
+  --card-bg: #fafafa;
+  --radius: 12px;
+  --primary-blue: #3a8dde;      /* Add your preferred blue */
+  --primary-purple: #8f5be8;    /* Add your preferred purple */
+}
+
+.about-details-ban{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: #beb9b9;
+}
+
+/* Basic page layout */
+.about-details-about-page {
+  background: var(--page-bg);
+  color: var(--text-color);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Simple container */
+.about-details-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Hero / Banner */
+.about-details-about-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.about-details-about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.45);
+}
+
+.about-details-about-hero__content {
+ position: absolute;
+    z-index: 2;
+    top: 50%;
+    /* left: 11%; */
+    text-align: center;
+    color: #fff;
+    padding: 0rem 1rem;
+    backdrop-filter: blur(0.5px);
+}
+
+.about-details-about-hero__title {
+  margin: 0 0 0.5rem 0;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.05;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Gradient text helper */
+.about-details-gradient-text {
+  background: linear-gradient(to right, var(--primary-blue), var(--primary-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hero subtitle */
+.about-details-about-hero__subtitle {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+/* Section titles */
+.about-details-section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* About content */
+.about-details-about-content {
+  background: var(--card-bg);
+  padding: 0.5rem;
+  width: 50%;
+  border-radius: 10px;
+ color:  #151617;
+  text-align: justify;
+  font-size: 20px;
+}
+
+.about-details-founders-section {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.about-details-gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-details-founders-section {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.about-details-gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-details-about-section {
+    padding: 0rem 0rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 45px;
+    /* border: 3px solid transparent; */
+    border-image: linear-gradient(135deg, #151617 0%, #d8b1ff 100%) 1;
+    border-image-slice: 1;
+    border-radius: 20px;
+    background-color: #c7c7c74f;
+    box-shadow: 0 20px 40px -15px rgb(0 0 0 / 56%);
+}
+
+.about-details-section-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.about-details-gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* About Content Wrapper */
+.about-details-about-wrapper {
+  display: flex;
+  flex-direction: row;
+
+}
+
+/* About Content */
+.about-details-about-content {
+  padding: 1rem;
+  flex: 1;
+  max-width: 51%;
+  border-radius: 12px;
+  color: #151617;
+  text-align: justify;
+  background-color: #fff3f34f;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* About Image Section */
+.about-details-about-image {
+  flex: 1;
+  max-width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-details-about-img {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-details-about-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Founders Section Styles */
+.about-details-founders-section {
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive Media Queries */
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+  .about-details-about-wrapper {
+    gap: 0rem;
+  }
+  
+  .about-details-about-content {
+    padding: 1rem;
+    flex: 1;
+    max-width: 50%;
+  
+    color: #151617;
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.7;
+    
+  }
+  
+  .about-details-about-img {
+   max-width: 450px;
+        position: absolute;
+        top: 78px;
+    
+  }
+}
+
+/* Desktop */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .about-details-about-wrapper {
+    gap: 0rem;
+  }
+  
+  .about-details-about-content {
+    font-size: 17px;
+    padding: 0rem;
+  }
+  
+  .about-details-about-img {
+    max-width: 400px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+  .about-details-about-wrapper {
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .about-details-about-content {
+    max-width: 100%;
+    width: 100%;
+    font-size: 16px;
+    padding: 1.8rem;
+    text-align: justify;
+  }
+  
+  .about-details-about-image {
+    max-width: 100%;
+    width: 100%;
+    order: 2;
+  }
+  
+  .about-details-about-img {
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .about-details-section-title {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    
+  }
+}
+
+/* Mobile Landscape */
+@media (min-width: 576px) and (max-width: 767px) {
+  .about-details-about-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .about-details-about-wrapper {
+    flex-direction: column-reverse;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .about-details-about-content {
+    max-width: 100%;
+    width: 100%;
+    font-size: 16px;
+    padding: 1.5rem;
+    order: 1;
+    text-align: justify;
+  }
+  
+  .about-details-about-image {
+    max-width: 100%;
+    width: 100%;
+    order: 2;
+  }
+  
+  .about-details-about-img {
+    max-width: 350px;
+    width: 100%;
+  }
+  
+  .about-details-section-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 575px) {
+  .about-details-about-section {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .about-details-about-wrapper {
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  .about-details-about-content {
+    max-width: 100%;
+    width: 100%;
+    font-size: 15px;
+    padding: 0.2rem;
+    order: 1;
+    line-height: 1.6;
+    text-align: justify;
+  }
+  
+  .about-details-about-image {
+    max-width: 100%;
+    width: 100%;
+    order: 2;
+  }
+  
+  .about-details-about-img {
+    max-width: 300px;
+    width: 100%;
+  }
+  
+  .about-details-section-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+ 
+  }
+}
+
+
+/* Founders Section Container */
+.about-details-founders-section {
+  padding: 0.5rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #f8f9fa;
+}
+
+.about-details-section-title { 
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.about-details-gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-details-founders {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4rem;
+  flex-wrap: wrap;
+
+}
+
+/* First Founder Card - Mr. Praveen Kumar */
+.about-details-founder-card:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  width: 100%;
+  position: relative;
+}
+
+
+.about-details-founder-card:first-child .about-details-founder-card__body {
+  width: 100%;
+  position: relative;
+}
+
+.about-details-founder-card:first-child .about-details-founder-card__bio {
+  background: #fff;
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #f0f0f0;
+  margin-top: -1rem;
+  z-index: 2;
+}
+
+.about-details-founder-card:first-child .about-details-founder-card__bio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+.about-details-founder-card:first-child .about-details-founder-card__bio h3 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.about-details-founder-card:first-child .about-details-founder-card__name {
+  color: #3498db;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+/* Second Founder Card - Mr. Shanmukh Sri Ram */
+.about-details-founder-card:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  width: 100%;
+  position: relative;
+}
+
+
+
+.about-details-founder-card:last-child .about-details-founder-card__body {
+  width: 100%;
+  position: relative;
+}
+
+.about-details-founder-card:last-child .about-details-founder-card__bio {
+  background: #fff;
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #f0f0f0;
+  margin-top: -1rem;
+  z-index: 2;
+}
+
+.about-details-founder-card:last-child .about-details-founder-card__bio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+.about-details-founder-card:last-child .about-details-founder-card__bio h3 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.about-details-founder-card:last-child .about-details-founder-card__name {
+  color: #4299e1;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+/* Responsive Media Queries */
+
+/* Extra Large Screens */
+@media (min-width: 1200px) {
+  .about-details-founders {
+    gap: 9rem;
+  }
+  
+  .about-details-founder-card:first-child .about-details-founder-card__avatar,
+  .about-details-founder-card:last-child .about-details-founder-card__avatar {
+    width: 400px;
+    height: auto;
+  }
+  
+  .about-details-founder-card:first-child,
+  .about-details-founder-card:last-child {
+    max-width: 320px;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .about-details-founders {
+    gap: 3.5rem;
+  }
+  
+  .about-details-founder-card:first-child .about-details-founder-card__avatar,
+  .about-details-founder-card:last-child .about-details-founder-card__avatar {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .about-details-founder-card:first-child,
+  .about-details-founder-card:last-child {
+    max-width: 280px;
+  }
+}
+
+/* Medium Screens (Tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .about-details-founders {
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+  }
+  
+  .about-details-founder-card:first-child .about-details-founder-card__avatar,
+  .about-details-founder-card:last-child .about-details-founder-card__avatar {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .about-details-founder-card:first-child,
+  .about-details-founder-card:last-child {
+    max-width: 250px;
+  }
+  
+  .about-details-founder-card:first-child .about-details-founder-card__bio,
+  .about-details-founder-card:last-child .about-details-founder-card__bio {
+    padding: 1.3rem;
+  }
+  
+  .about-details-founder-card:first-child .about-details-founder-card__bio h3,
+  .about-details-founder-card:last-child .about-details-founder-card__bio h3 {
+    font-size: 1.4rem;
+  }
+  
+  .about-details-founder-card:first-child .about-details-founder-card__name,
+  .about-details-founder-card:last-child .about-details-founder-card__name {
+    font-size: 1rem;
+  }
+}
+
+/* Small Screens (Mobile Landscape) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .about-details-founders {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  
+  .about-details-founder-card:first-child .about-details-founder-card__avatar,
+  .about-details-founder-card:last-child .about-details-founder-card__avatar {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .about-details-founder-card:first-child,
+  .about-details-founder-card:last-child {
+    max-width: 220px;
+  }
+  
+  .about-details-founder-card:first-child .about-details-founder-card__bio,
+  .about-details-founder-card:last-child .about-details-founder-card__bio {
+    padding: 1.2rem;
+  }
+  
+  .about-details-founder-card:first-child .about-details-founder-card__bio h3,
+  .about-details-founder-card:last-child .about-details-founder-card__bio h3 {
+    font-size: 1.3rem;
+  }
+  
+  .about-details-founder-card:first-child .about-details-founder-card__name,
+  .about-details-founder-card:last-child .about-details-founder-card__name {
+    font-size: 0.95rem;
+  }
+}
+
+/* Extra Small Screens (Mobile Portrait) */
+@media (max-width: 575px) {
+  .about-details-founders-section {
+    padding: 2rem 1rem;
+  }
+  
+  .about-details-section-title {
+    font-size: 2rem;
+   
+  }
+  
+  .about-details-founders {
+    flex-direction: row;
+        align-items: center;
+        gap: 0rem
+    
+  }
+  
+  .about-details-founder-card:first-child .about-details-founder-card__avatar,
+  .about-details-founder-card:last-child .about-details-founder-card__avatar {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .about-details-founder-card:first-child,
+  .about-details-founder-card:last-child {
+    max-width: 200px;
+  }
+  
+  .about-details-founder-card:first-child .about-details-founder-card__bio,
+  .about-details-founder-card:last-child .about-details-founder-card__bio {
+    padding: 1rem;
+  }
+  
+  .about-details-founder-card:first-child .about-details-founder-card__bio h3,
+  .about-details-founder-card:last-child .about-details-founder-card__bio h3 {
+    font-size: 1.2rem;
+  }
+  
+  .about-details-founder-card:first-child .about-details-founder-card__name,
+  .about-details-founder-card:last-child .about-details-founder-card__name {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+}
+
+/* Very Small Screens */
+@media (max-width: 360px) {
+  .about-details-founder-card:first-child .about-details-founder-card__avatar,
+  .about-details-founder-card:last-child .about-details-founder-card__avatar {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .about-details-founder-card:first-child,
+  .about-details-founder-card:last-child {
+    max-width: 180px;
+  }
+  
+  .about-details-founder-card:first-child .about-details-founder-card__bio,
+  .about-details-founder-card:last-child .about-details-founder-card__bio {
+    padding: 0.8rem;
+  }
+  
+  .about-details-founder-card:first-child .about-details-founder-card__bio h3,
+  .about-details-founder-card:last-child .about-details-founder-card__bio h3 {
+    font-size: 1.1rem;
+  }
+  
+  .about-details-founder-card:first-child .about-details-founder-card__name,
+  .about-details-founder-card:last-child .about-details-founder-card__name {
+    font-size: 0.8rem;
+  }
+}
+
+
+
+/* Why choose us */
+.about-details-why-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.about-details-why-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(16,16,16,0.04);
+}
+
+.about-details-why-item__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.02));
+  color: #333;
+  flex-shrink: 0;
+}
+
+.about-details-why-item__title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.about-details-why-item__desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@media(min-width:1440px){
+  .about-details-about-hero__content {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 11%;
+    text-align: center;
+    color: #fff;
+    padding: 0rem 1rem;
+    backdrop-filter: blur(0.5px);
+}
+}
+
+/* Responsive */
+@media (max-width: 840px) {
+  .about-details-container {
+    padding: 1.25rem;
+  }
+
+  .about-details-founders {
+    grid-template-columns: 1fr;
+  }
+
+  .about-details-why-list {
+    grid-template-columns: 1fr;
+  }
+
+  .about-details-about-hero__content {
+    padding: 0rem 1rem;
+  }
+}
+
+/* small tweaks for very narrow screens */
+@media (max-width: 420px) {
+  .about-details-about-hero__title {
+    color: #cec7c7;
+    font-size: 1.6rem;
+  }
+
+  .about-details-founder-card__avatar {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Add these animation enhancement styles to your existing CSS */
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add subtle hover effects for animated elements */
+.about-details-why-item {
+  transition: all 0.3s ease;
+}
+
+.about-details-why-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.about-details-founder-card {
+  transition: all 0.3s ease;
+}
+
+.about-details-founder-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Add subtle pulse effect to icons */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.about-details-why-item__icon:hover {
+  animation: pulse 1.5s infinite;
+}
+
+/* Enhance gradient text animation */
+.about-details-gradient-text {
+
+  background-size: 400% 400%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Add loading animation for images */
+.about-details-about-img,
+.about-details-founder-card__avatar {
+  transition: all 0.4s ease;
+}
+
+/* Custom AOS animations for enhanced effects */
+[data-aos="fade-in"] {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+[data-aos="fade-in"].aos-animate {
+  opacity: 1;
+}
+
+/* Add subtle shadows for depth */
+.about-details-about-section,
+.about-details-founders-section,
+.about-details-why-section {
+  transition: all 0.3s ease;
+}

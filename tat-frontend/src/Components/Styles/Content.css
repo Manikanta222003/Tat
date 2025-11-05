@@ -1,0 +1,61 @@
+:root{
+  --brand:#1a3c6c;
+  --muted:#6b7280;
+  --accent:#22c55e;
+  --bg:#f8fafc;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:#111827}
+
+.container{max-width:1100px;margin:0 auto;padding:10px 16px}
+
+/* Hero */
+.cw-hero{background:linear-gradient(135deg, rgba(26,60,108,0.9), rgba(34,197,94,0.85));color:#fff;padding:64px 0;text-align:center}
+.cw-hero .lead{margin:12px 0 18px;opacity:0.95}
+.cw-cta{display:inline-block;background:#fff;color:var(--brand);padding:10px 18px;border-radius:8px;font-weight:600;text-decoration:none}
+
+/* Services */
+.cw-services{padding:56px 0}
+.cw-services h2{text-align:center;margin-bottom:28px}
+.cw-services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.cw-service-card{background:#fff;padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+.cw-service-card h3{color:var(--brand);margin-bottom:8px}
+.cw-service-card p{color:var(--muted);line-height:1.6}
+
+/* Pricing */
+.cw-pricing{padding:40px 0}
+.cw-pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.cw-pricing-card{background:#fff;padding:20px;border-radius:10px;text-align:center;border:1px solid rgba(15,23,42,0.04)}
+.cw-pricing-card .price{font-size:1.25rem;font-weight:700;color:var(--brand);margin:8px 0}
+.btn-outline{background:transparent;border:1px solid var(--brand);color:var(--brand);padding:8px 14px;border-radius:8px;cursor:pointer}
+
+/* Portfolio */
+.cw-portfolio{padding:40px 0}
+.cw-portfolio-row{display:flex;gap:12px;flex-wrap:wrap}
+.cw-portfolio-card{background:#fff;padding:12px;border-radius:10px;flex:1 1 220px;text-decoration:none;color:inherit;display:block;border:1px solid rgba(15,23,42,0.04)}
+.cw-portfolio-card .thumb{background:linear-gradient(90deg,#eef2ff,#fff7ed);height:70px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--brand);margin-bottom:8px}
+
+/* Testimonials */
+.cw-testimonials{padding:40px 0}
+.cw-testimonials-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+blockquote{background:#fff;padding:18px;border-radius:10px;border-left:4px solid var(--accent)}
+blockquote cite{display:block;margin-top:10px;color:var(--muted);font-size:0.9rem}
+
+/* Contact */
+.cw-contact{padding:48px 0}
+.cw-form{max-width:700px;margin:0 auto;display:grid;gap:12px}
+.cw-form label{display:flex;flex-direction:column;font-weight:600;color:var(--brand)}
+.cw-form input,.cw-form textarea,.cw-form select{margin-top:6px;padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.08);font-size:1rem}
+.btn-primary{background:var(--brand);color:#fff;padding:10px 14px;border-radius:8px;border:none;cursor:pointer;font-weight:600}
+.form-status{color:var(--accent);text-align:center;margin-top:8px}
+
+/* Footer */
+.cw-footer{background:#0f1724;color:#fff;padding:20px 0;text-align:center;margin-top:40px}
+
+/* Responsive tweaks */
+@media (max-width:600px){
+  .cw-hero{padding:36px 0}
+  .cw-portfolio-row{flex-direction:column}
+}

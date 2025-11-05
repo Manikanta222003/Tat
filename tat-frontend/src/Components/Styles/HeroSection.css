@@ -1,0 +1,229 @@
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  /* filter: brightness(35%);  */
+  -webkit-mask-image: radial-gradient(circle, #c6c3c3db 70%, #1a3c6c85 100%);
+  mask-image: radial-gradient(circle, #1a3c6ce6 70%, #fff 100%)
+}
+
+
+.overlay-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 1200px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.content-wrapper { 
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.company-name {
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #f3f5ff;
+  opacity: 0.9;
+}
+
+.main-heading {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 4px rgb(158 158 158 / 15%);
+  background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sub-heading {
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 15px 35px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: white;
+    /* background: linear-gradient(45deg, var(--primary-blue), var(--primary-purple)); */
+    color: black;
+    box-shadow: 0 8px 20px #a5a6a8;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  
+  
+}
+
+.btn-secondary {
+  background: #374151;
+  color: white;
+  box-shadow: 0 8px 20px #a5a6a8;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  transform: translateY(-2px);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+ .main-heading {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgb(158 158 158 / 15%);
+    background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+}
+
+
+@media (min-width:601px) and (max-width: 768px) {
+  .hero-section {
+    min-height: 500px;
+  }
+
+  .content-wrapper {
+    border-radius: 15px;
+  }
+
+  .company-name {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+
+  .main-heading {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+
+  .main-heading br {
+    display: none;
+  }
+
+  .sub-heading {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+
+  .sub-heading br {
+    display: none;
+  }
+
+  .cta-buttons {
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 250px;
+    padding: 12px 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    min-height: 450px;
+  }
+
+  .content-wrapper {
+    padding: -1px 20px;
+  }
+
+
+  .sub-heading {
+    font-size: 1.2rem;
+  }
+
+  .company-name {
+    font-size: 1.2rem;
+  }
+    .cta-buttons {
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+  }
+  .background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  /* filter: brightness(20%);  */
+          object-position: 70% 100%;
+  -webkit-mask-image: radial-gradient(circle, #c6c3c3db 70%, #1a3c6c85 100%);
+  mask-image: radial-gradient(circle, #1a3c6ce6 70%, #fff 100%)
+}
+}

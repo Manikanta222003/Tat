@@ -1,0 +1,9 @@
+body, #root {
+  /* background: linear-gradient(120deg, rgb(228, 228, 228) 0%, rgb(229, 231, 233) 100%); */
+    background-color: white;
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}

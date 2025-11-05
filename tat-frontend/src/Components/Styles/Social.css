@@ -1,0 +1,25 @@
+.social-media-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+  background-color: #f8f8f8;
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .social-icon {
+    width: 25px;
+    height: 25px;
+  }
+}
