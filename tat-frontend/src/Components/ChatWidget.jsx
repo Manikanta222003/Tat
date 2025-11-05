@@ -58,14 +58,14 @@ export default function ChatWidget() {
 
   return (
     <>
-      {/* Chat Icon when closed */}
-      {/* {!open && (
+       Chat Icon when closed 
+       {!open && (
         <div className="chat-icon" onClick={() => setOpen(true)}>
           <img src="/chat-icon.png" alt="chat" />
         </div>
-      )} */}
+      )} 
 
-      {/* Minimized Bar */}
+       Minimized Bar 
       {open && minimized && (
         <div className="chat-minimized" onClick={() => setMinimized(false)}>
           <img src="/bot.png" alt="bot" />
@@ -74,19 +74,19 @@ export default function ChatWidget() {
       )}
 
       {/* Full Popup Window */}
-      /* {open && !minimized && (
-        <div className="chat-popup" ref={popupRef}> */
+      {open && !minimized && (
+        <div className="chat-popup" ref={popupRef}> 
           {/* Popup Header */}
-          {/* <div className="chat-popup-header" onMouseDown={startDrag}>
+           <div className="chat-popup-header" onMouseDown={startDrag}>
             <div className="chat-header-left">
-              {/* <img className="avatar" src="/bot.png" alt="" /> */}
+              <img className="avatar" src="/bot.png" alt="" /> 
               <div>
                 <div className="name">TAT ChatBot</div>
                 
-              </div> */}
-            {/* </div> */}
+              </div> 
+            </div> 
 
-            {/* <div className="chat-header-right">
+             <div className="chat-header-right">
               <button className="minimize-btn" onClick={() => setMinimized(true)}>
                 ─
               </button>
@@ -94,7 +94,7 @@ export default function ChatWidget() {
                 ×
               </button>
             </div>
-          </div> */}
+          </div> 
 
           <div className="chat-popup-body">
             <ChatBot />
