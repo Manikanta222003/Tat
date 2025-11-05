@@ -15,7 +15,7 @@ import git from "../assets/images/git-grey.png";
 import github from "../assets/images/GITHUB-grey.png";
 import googleads from "../assets/images/googleads.png";
 import mysql from "../assets/images/MYSQL-grey.png";
-import mongoDB from "../assets/images/mongodb-grey.png";
+import mongoDB from "../assets/images/Mongodb-grey.png";
 import php from "../assets/images/PHP-grey.png";
 import postman from "../assets/images/postman-grey.png";
 import django from "../assets/images/Django-grey.png";
