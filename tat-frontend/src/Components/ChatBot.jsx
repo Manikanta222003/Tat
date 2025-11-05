@@ -16,10 +16,9 @@ function ChatBot() {
     setLoading(true);
 
     try {
-      const response = await axios.post("https://tat-h26n.onrender.com", {
-
-        question: userQuestion,
-      });
+         const response = await axios.post("https://tat-h26n.onrender.com/chat", {
+      question: userQuestion,
+    });
 
       const botAnswer =
         response.data.answer || "Sorry, I don't know the answer.";
