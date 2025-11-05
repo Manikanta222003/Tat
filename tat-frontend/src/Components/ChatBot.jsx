@@ -6,6 +6,7 @@ function ChatBot() {
   const [question, setQuestion] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
   const [loading, setLoading] = useState(false);
+  const BACKEND_URL = "https://tat-h26n.onrender.com";
 
   const handleAsk = async () => {
     if (!question.trim()) return;
@@ -16,9 +17,9 @@ function ChatBot() {
     setLoading(true);
 
     try {
-         const response = await axios.post("https://tat-h26n.onrender.com/chat", {
-      question: userQuestion,
-    });
+        const response = await axios.post(`${BACKEND_URL}/chat`, {
+        question: userQuestion,
+      });
 
       const botAnswer =
         response.data.answer || "Sorry, I don't know the answer.";
